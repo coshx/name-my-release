@@ -1,0 +1,22 @@
+{
+  "name": "name-my-release",
+  "homepage": "https://github.com/coshx/name-my-release",
+  "authors": [
+    "Adrien Cadet <adrien@coshx.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.6",
+    "jquery": "~2.2.0"
+  }
+}

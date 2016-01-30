@@ -5,17 +5,20 @@ class HomePresenter extends BasePresenter
     list[i]
 
   engineName: (value) ->
-    name = value.trim()
-    i = 0
-    while i < name.length
-      c = name[i]
-      if c is '\s'
-        name[i] = "-"
-      else if c is c.toUpperCase() and i > 0
-        name = name.substr(0, i) + "-" + name.substr(i, name.length)
-        i++
-      i++
-    name.toLowerCase()
+    trimmedValue = value.trim()
+    outcome = ""
+
+    for i in [0...trimmedValue.length]
+      c = trimmedValue[i]
+
+      if c is " "
+        outcome += "-"
+      else if c is c.toUpperCase() and i > 0 and trimmedValue[i - 1] != "-"
+        outcome += "-" + c.toLowerCase()
+      else
+        outcome += c.toLowerCase()
+
+    outcome
 
   generateName: () ->
     color = @engineName(@random(ColorList))
@@ -23,6 +26,8 @@ class HomePresenter extends BasePresenter
     "#{color}-#{animal}"
 
   onCreate: () ->
+    super
+
     @releaseNameField = $('.js-release-name')
     @clipboardAction = new Clipboard('.js-clipboard-action')
 

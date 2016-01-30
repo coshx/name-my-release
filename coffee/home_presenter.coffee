@@ -24,6 +24,7 @@ class HomePresenter extends BasePresenter
 
   onCreate: () ->
     @releaseNameField = $('.js-release-name')
+    @clipboardAction = new Clipboard('.js-clipboard-action')
 
     @releaseNameField.text @generateName()
 

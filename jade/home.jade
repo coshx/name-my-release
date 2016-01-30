@@ -7,9 +7,9 @@ html
     meta(content = 'IE=edge;chrome=1', "http-equiv"= 'X-UA-Compatible')
     meta(name='viewport', content = 'width=device-width, initial-scale=1')
 
-    meta(name= 'description', content = '')
+    meta(name= 'description', content = "'Cause life is too short to find a great release/dev branch name. With love from Coshx Labs.")
 
-    meta(name= 'keywords', content = '')
+    meta(name= 'keywords', content = 'Coshx, Labs, release, name, animals, colors, useless, bullshit, crappy, kludge, workaround')
 
     link(rel='stylesheet', type='text/css', href= 'all.css')
 
@@ -31,7 +31,17 @@ html
         .release-name-wrapper
           .release-name.js-release-name
           .action-wrapper
-            .clipboard-action.js-clipboard-action(data-clipboard-target=".js-release-name").
-              Copy to clipboard
-            .generate-action.js-generate Give me another one
+            .clipboard-action.js-clipboard-action(data-clipboard-target=".js-release-name")
+              | Copy to
+              br
+              | &nbsp;clipboard
+            .generate-action.js-generate
+              | Give me
+              br
+              | &nbsp;another one
+
+        footer
+          | With &hearts; from
+          a(href='http://www.coshx.com/') &nbsp;Coshx Labs
+          | .
 

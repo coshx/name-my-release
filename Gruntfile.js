@@ -17,7 +17,10 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'build/all.js': [
-                        'coffee/helpers/sensor_icon_helper.coffee'
+                        'coffee/animal_list.coffee',
+                        'coffee/color_list.coffee',
+                        'coffee/base_presenter.coffee',
+                        'coffee/home_presenter.coffee'
                     ]
                 }
             }
@@ -28,7 +31,7 @@ module.exports = function (grunt) {
                     pretty: true
                 },
                 files: {
-                    'build/home.html': 'jade/home.jade'
+                    'build/index.html': 'jade/home.jade'
                 }
             }
         },

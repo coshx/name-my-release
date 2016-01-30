@@ -42,7 +42,7 @@ HomePresenter = (function(superClass) {
       c = trimmedValue[i];
       if (c === " ") {
         outcome += "-";
-      } else if (c === c.toUpperCase() && i > 0 && trimmedValue[i - 1] !== "-") {
+      } else if (c === c.toUpperCase() && i > 0 && trimmedValue[i - 1] !== " ") {
         outcome += "-" + c.toLowerCase();
       } else {
         outcome += c.toLowerCase();

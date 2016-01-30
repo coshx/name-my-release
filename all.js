@@ -35,20 +35,20 @@ HomePresenter = (function(superClass) {
   };
 
   HomePresenter.prototype.engineName = function(value) {
-    var c, i, name;
-    name = value.trim();
-    i = 0;
-    while (i < name.length) {
-      c = name[i];
-      if (c === '\s') {
-        name[i] = "-";
-      } else if (c === c.toUpperCase() && i > 0) {
-        name = name.substr(0, i) + "-" + name.substr(i, name.length);
-        i++;
+    var c, i, j, outcome, ref, trimmedValue;
+    trimmedValue = value.trim();
+    outcome = "";
+    for (i = j = 0, ref = trimmedValue.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+      c = trimmedValue[i];
+      if (c === " ") {
+        outcome += "-";
+      } else if (c === c.toUpperCase() && i > 0 && trimmedValue[i - 1] !== "-") {
+        outcome += "-" + c.toLowerCase();
+      } else {
+        outcome += c.toLowerCase();
       }
-      i++;
     }
-    return name.toLowerCase();
+    return outcome;
   };
 
   HomePresenter.prototype.generateName = function() {
@@ -59,6 +59,7 @@ HomePresenter = (function(superClass) {
   };
 
   HomePresenter.prototype.onCreate = function() {
+    HomePresenter.__super__.onCreate.apply(this, arguments);
     this.releaseNameField = $('.js-release-name');
     this.clipboardAction = new Clipboard('.js-clipboard-action');
     this.releaseNameField.text(this.generateName());

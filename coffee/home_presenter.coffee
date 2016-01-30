@@ -13,7 +13,7 @@ class HomePresenter extends BasePresenter
 
       if c is " "
         outcome += "-"
-      else if c is c.toUpperCase() and i > 0 and trimmedValue[i - 1] != "-"
+      else if c is c.toUpperCase() and i > 0 and trimmedValue[i - 1] != " "
         outcome += "-" + c.toLowerCase()
       else
         outcome += c.toLowerCase()

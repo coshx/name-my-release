@@ -120,7 +120,8 @@ footer {
   margin: 2rem;
   color: #2A363B;
   font-size: .8rem;
-  font-family: "Varela Round", sans-serif; }
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.5rem; }
   footer a {
     padding-bottom: 2px;
     color: #2A363B;
